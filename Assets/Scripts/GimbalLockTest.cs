@@ -7,6 +7,7 @@ public class GimbalLockTest : MonoBehaviour
 	
 	public Button EulerButton;
 	public Button QuaternionButton;
+	public Button QuaternionTestButton;
 
 	[Header("Target")]
 	public Transform TargetTransform;
@@ -41,6 +42,7 @@ public class GimbalLockTest : MonoBehaviour
 		UpdateUIValue();
 		EulerButton.onClick.AddListener (OnEulerClick);
 		QuaternionButton.onClick.AddListener (OnQuaternionClick);
+		QuaternionTestButton.onClick.AddListener (SwitchToQuaternionTestScene);
 	}
 	
 	private void Update ()
@@ -110,5 +112,10 @@ public class GimbalLockTest : MonoBehaviour
 	{
 		timeCache = Time.time;
 		isStart = true;
+	}
+
+	private void SwitchToQuaternionTestScene()
+	{
+		Application.LoadLevel("QuaternionTest");
 	}
 }
